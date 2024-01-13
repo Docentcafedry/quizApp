@@ -1,4 +1,7 @@
-export default function StartWindow({ questionsCount, dispatcher }) {
+import { useQuiz } from "./providers/QuizContext";
+
+export default function StartWindow() {
+  const { questionsCount, dispatcher } = useQuiz();
   return (
     <div className="start">
       <h2>Lets start the quiz!</h2>

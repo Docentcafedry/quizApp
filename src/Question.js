@@ -1,4 +1,8 @@
-export default function Question({ question, dispatcher, answer }) {
+import { useQuiz } from "./providers/QuizContext";
+
+export default function Question() {
+  const { dispatcher, answer, index, questions } = useQuiz();
+  const question = questions[index];
   const isAnswered = answer != null;
   return (
     <div>

@@ -1,10 +1,13 @@
-export default function ProgressBar({
-  questions,
-  index,
-  numQuestions,
-  points,
-  numPoints,
-}) {
+import { useQuiz } from "./providers/QuizContext";
+
+export default function ProgressBar({}) {
+  const {
+    questions,
+    index,
+    questionsCount: numQuestions,
+    points,
+    numPoints,
+  } = useQuiz();
   return (
     <header className="progress">
       <progress max={numQuestions} value={index}></progress>
